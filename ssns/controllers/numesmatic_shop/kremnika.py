@@ -5,22 +5,19 @@ from typing import Tuple
 from ssns.core.session_maker import _loop, _close_session
 
 
-class MonetikController:
+class KremnikaController:
 
     def __init__(self, request, models, url):
         self.request = request
         self.models = models
         self.url = url
 
-    def __call__(self, request, models, url):
-        self.request = request
-        self.models = models
-        self.url = url
+    def __call__(self):
         return self.date_for_parse()
 
     def date_for_parse(self) -> Tuple[int, str]:
         """
-        Method MonetikController
+        Method KremnikaController
 
         :return: is now DOM.
         """
@@ -32,5 +29,5 @@ class MonetikController:
 
 
 if __name__ == '__main__':
-    date = MonetikController(1, 2, 'https://www.monetnik.ru/')
+    date = KremnikaController(1, 2, 'https://kremnica.ru/')
     date.date_for_parse()
