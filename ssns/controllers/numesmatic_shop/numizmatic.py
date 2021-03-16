@@ -12,10 +12,7 @@ class MonetikController:
         self.models = models
         self.url = url
 
-    def __call__(self, request, models, url):
-        self.request = request
-        self.models = models
-        self.url = url
+    def __call__(self):
         return self.date_for_parse()
 
     def date_for_parse(self) -> Tuple[int, str]:
