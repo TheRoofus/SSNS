@@ -24,10 +24,10 @@ class MonetikController:
         # ToDo Добавить парсинг ДОМа.
         dom = _loop(url=self.url)
 
-        _close_session(workflow_runtime=True, time_close=10)
+        _close_session(workflow_runtime=True, time_close=1)
         return dom
 
 
 if __name__ == '__main__':
-    date = MonetikController(1, 2, 'https://www.monetnik.ru/')
+    date = MonetikController(1, 2, 'https://www.numizmatik.ru/')
     date.date_for_parse()
